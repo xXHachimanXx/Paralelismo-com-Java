@@ -27,13 +27,15 @@ class Tarefa extends Thread
     public void run()
     {
         for(long y = valorInicial; y <= valorFinal; y++)
-            total = total + y;  
+            total = total + 1;  
             
         //código para executar em paralelo
+        /*
         System.out.println("ID: " + Thread.currentThread().getId());
         System.out.println("Nome: " + Thread.currentThread().getName());
         System.out.println("Prioridade: " + Thread.currentThread().getPriority());
         System.out.println("Estado: " + Thread.currentThread().getState());          
+        */
     }    
 
 }//end class Tarefa
@@ -42,7 +44,7 @@ public class Teste
 {
     public static void main(String [] args)
     {
-        Tarefa t1 = new Tarefa(0, 1000);
+        Tarefa t1 = new Tarefa(1, 1000);
         t1.setName("Tarefa 1"); //Método da classe Thread
         Tarefa t2 = new Tarefa(1001, 2000);
         t2.setName("Tarefa 2"); //Método da classe Thread
