@@ -4,14 +4,14 @@ import java.lang.Thread;
 
 class Tarefa extends Thread
 {    
-    public final long valorInicial;
-    public final long valorFinal;
-    private long total;
+    public final long long valorInicial;
+    public final long long valorFinal;
+    private long long total;
 
     /**
      * Construtor padrão
      */
-    public Tarefa(long vi, long vf)
+    public Tarefa(long long vi, long long vf)
     {
         this.valorInicial = vi;
         this.valorFinal = vf;        
@@ -44,11 +44,11 @@ public class Teste
 {
     public static void main(String [] args)
     {
-        Tarefa t1 = new Tarefa(1, 1000);
+        Tarefa t1 = new Tarefa(1, 1000000000);
         t1.setName("Tarefa 1"); //Método da classe Thread
-        Tarefa t2 = new Tarefa(1001, 2000);
+        Tarefa t2 = new Tarefa(1000000001, 2000000000);
         t2.setName("Tarefa 2"); //Método da classe Thread
-        Tarefa t3 = new Tarefa(2001, 3000);
+        Tarefa t3 = new Tarefa(2000000001, 3000000000);
         t3.setName("Tarefa 3"); //Método da classe Thread
                 
 
@@ -56,6 +56,7 @@ public class Teste
         t1.start();
         t2.start();
         t3.start();
+        int nucleos = Runtime.getRuntime().availableProcessors();
 
         try
         {
@@ -70,5 +71,6 @@ public class Teste
 
         //Exibimos o somatório dos totalizadores de cada Thread
         System.out.println("Total: " + (t1.getTotal() + t2.getTotal() + t3.getTotal()));
+        System.out.println("Núcleos: " + nucleos);
     }
 }

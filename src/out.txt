@@ -1,4 +1,0 @@
-ID: 12
-Nome: Thread-0
-Prioridade: 5
-Estado: RUNNABLE
